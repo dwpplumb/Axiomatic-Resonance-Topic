@@ -1,0 +1,16 @@
+Smoke-Tests (bewährt, schnell)
+
+python .\sha256_prune_lite.py --rounds 8  --prefix-bits 2 --deviations 1 --fix-w-words 10 --timeout-sec 10 --seed 1 --out .\bench\sha_sweep\smoke_unsat.json
+python .\sha256_prune_lite.py --rounds 12 --prefix-bits 4 --deviations 1 --fix-w-words 10 --timeout-sec 30 --seed 1 --out .\bench\sha_sweep\smoke_sat.json
+
+
+Frontier-Beispiele (du hattest sie erfolgreich)
+
+python .\sha256_prune_lite.py --rounds 24 --prefix-bits 6 --deviations 1 --fix-w-words 12 --timeout-sec 120 --seed 1 --out .\bench\sha_sweep\r24_easy.json
+python .\sha256_prune_lite.py --rounds 32 --prefix-bits 8 --deviations 1 --fix-w-words 14 --timeout-sec 180 --seed 1 --out .\bench\sha_sweep\r32_easy.json
+python .\sha256_prune_lite.py --rounds 32 --prefix-bits 8 --deviations 2 --fix-w-words 12 --timeout-sec 240 --seed 1 --out .\bench\sha_sweep\r32_hard.json
+
+
+Aggregieren
+
+python .\sha_aggregate.py ".\bench\sha_sweep\*.json" ".\bench\sha_sweep\summary.csv"
